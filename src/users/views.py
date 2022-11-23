@@ -37,7 +37,7 @@ class AuthService:
     @staticmethod
     def __encode_auth_token__(user_id):
         try:
-            payload = {"now": str(datetime.datetime.now()), "user_id": user_id}
+            payload = {"user_id": user_id}
             return jwt.encode(payload, SECRET_KEY, algorithm="HS256")
         except Exception as e:
             return e
